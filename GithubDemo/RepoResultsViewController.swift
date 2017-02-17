@@ -26,10 +26,12 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
+        tableView.separatorStyle = .singleLine
         
         // Initialize the UISearchBar
         searchBar = UISearchBar()
         searchBar.delegate = self
+        searchBar.setImage(UIImage(named: "Github_Icon_For_Search"), for: .search, state: .normal)
 
         // Add SearchBar to the NavigationBar
         searchBar.sizeToFit()
