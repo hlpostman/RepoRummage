@@ -15,7 +15,7 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
     var searchBar: UISearchBar!
     var searchSettings = GithubRepoSearchSettings()
 
-    var repos: [GithubRepo]!
+    var repos: [GithubRepo] = []
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,7 +23,7 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         // Table View Delegates
-        tableView.dataSource = repos as! UITableViewDataSource? // should this be self?
+        tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
         
@@ -40,12 +40,13 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return repos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath)
-        // configure cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath) as! RepoCell
+        // Configure cell
+        cell.repo = repos[indexPath.row]
         return cell
     }
 
