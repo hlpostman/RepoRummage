@@ -32,7 +32,7 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
         searchBar = UISearchBar()
         searchBar.delegate = self
         searchBar.setImage(UIImage(named: "Github_Icon_For_Search"), for: .search, state: .normal)
-
+        
         // Add SearchBar to the NavigationBar
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar
