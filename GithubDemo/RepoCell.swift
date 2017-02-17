@@ -12,7 +12,6 @@ class RepoCell: UITableViewCell {
 
     
     @IBOutlet weak var repoNameLabel: UILabel!
-    
     @IBOutlet weak var repoAuthorLabel: UILabel!
     @IBOutlet weak var repoDescriptionLabel: UILabel!
     @IBOutlet weak var starsImageView: UIImageView!
