@@ -47,6 +47,7 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath) as! RepoCell
         // Configure cell
         cell.repo = repos[indexPath.row]
+        cell.selectionStyle = .none
         return cell
     }
 
