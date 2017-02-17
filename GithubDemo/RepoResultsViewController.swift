@@ -23,7 +23,7 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         // Table View Delegates
-        tableView.dataSource = self // repos as! UITableViewDataSource?
+        tableView.dataSource = repos as! UITableViewDataSource? // should this be self?
         
         // Initialize the UISearchBar
         searchBar = UISearchBar()
@@ -56,7 +56,9 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
 
         // Perform request to GitHub API to get the list of repositories
         GithubRepo.fetchRepos(searchSettings, successCallback: { (newRepos) -> Void in
+            // Update repos displayed in table view
             self.repos = newRepos
+            self.tableView.reloadData()
             // Print the returned repositories to the output window
             for repo in newRepos {
                 print(repo)
