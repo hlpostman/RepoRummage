@@ -17,6 +17,8 @@ class RepoResultsViewController: UIViewController {
 
     var repos: [GithubRepo]!
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
