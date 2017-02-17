@@ -30,7 +30,7 @@ class RepoCell: UITableViewCell {
             // Labels
             repoNameLabel.text = repo.name
             repoAuthorLabel.text = repo.ownerHandle
-            repoDescriptionLabel.text = repo.description
+            repoDescriptionLabel.text = repo.repoDescription
             starCountLabel.text = String(describing: repo.stars!)
             forkCountLabel.text = String(describing: repo.forks!)
         }
