@@ -70,6 +70,14 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="wkd-aD-Tjp" id="nRb-RC-UTm"/>
+                                            <outlet property="forksImageView" destination="HZI-LH-AmN" id="RWv-4Y-TdZ"/>
+                                            <outlet property="repoAuthorLabel" destination="2AB-fH-zJe" id="jLf-28-qm7"/>
+                                            <outlet property="repoDescriptionLabel" destination="jJT-1c-Z0H" id="C2j-sJ-lju"/>
+                                            <outlet property="repoNameLabel" destination="EZ2-U9-f0j" id="zHW-7W-oOC"/>
+                                            <outlet property="starsImageView" destination="z5F-ld-2HK" id="2sn-wh-4d9"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
