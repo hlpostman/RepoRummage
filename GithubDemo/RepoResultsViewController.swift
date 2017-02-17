@@ -10,7 +10,7 @@ import UIKit
 import MBProgressHUD
 
 // Main ViewController
-class RepoResultsViewController: UIViewController {
+class RepoResultsViewController: UIViewController, UITableViewDataSource {
 
     var searchBar: UISearchBar!
     var searchSettings = GithubRepoSearchSettings()
@@ -21,7 +21,10 @@ class RepoResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Table View Delegates
+        tableView.dataSource = self // repos as! UITableViewDataSource?
+        
         // Initialize the UISearchBar
         searchBar = UISearchBar()
         searchBar.delegate = self
@@ -33,7 +36,19 @@ class RepoResultsViewController: UIViewController {
         // Perform the first search when the view controller first loads
         doSearch()
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath)
+        // configure cell
+        return cell
+    }
 
+    
+    
     // Perform the search.
     fileprivate func doSearch() {
 
@@ -41,10 +56,9 @@ class RepoResultsViewController: UIViewController {
 
         // Perform request to GitHub API to get the list of repositories
         GithubRepo.fetchRepos(searchSettings, successCallback: { (newRepos) -> Void in
-
+            self.repos = newRepos
             // Print the returned repositories to the output window
             for repo in newRepos {
-                self.repos.append(repo)
                 print(repo)
             }   
 
