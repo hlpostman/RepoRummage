@@ -119,7 +119,7 @@
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="HfP-RF-I4u" secondAttribute="bottom" id="Iw0-0N-byz"/>
                             <constraint firstItem="HfP-RF-I4u" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="PA2-Xp-1DI"/>
-                            <constraint firstItem="HfP-RF-I4u" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="vzn-y8-39T"/>
+                            <constraint firstItem="HfP-RF-I4u" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="vzn-y8-39T"/>
                             <constraint firstAttribute="trailing" secondItem="HfP-RF-I4u" secondAttribute="trailing" id="y21-gy-ktN"/>
                         </constraints>
                     </view>
