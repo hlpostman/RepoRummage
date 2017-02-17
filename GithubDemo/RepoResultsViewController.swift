@@ -24,6 +24,8 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
         
         // Table View Delegates
         tableView.dataSource = repos as! UITableViewDataSource? // should this be self?
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
         
         // Initialize the UISearchBar
         searchBar = UISearchBar()
