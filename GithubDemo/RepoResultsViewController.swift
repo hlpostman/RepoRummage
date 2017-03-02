@@ -16,7 +16,7 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
     var searchSettings = GithubRepoSearchSettings()
 
     var repos: [GithubRepo] = []
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -78,6 +78,12 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
     
     @IBAction func onSettingsButton(_ sender: AnyObject) {
         performSegue(withIdentifier: "searchSettingsSegue", sender: nil)
+    }
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let navController = segue.destination as! UINavigationController
+        let vc = navController.topViewController as! SearchSettingsViewController
+        vc.settings = Int(vc.numberOfStarsSlider.value)
     }
     
 }

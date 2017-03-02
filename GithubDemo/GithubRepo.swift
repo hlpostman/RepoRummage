@@ -9,7 +9,7 @@
 import Foundation
 import AFNetworking
 
-private let reposUrl = "https://api.github.com/search/repositories"
+private let reposUrl = "https://api.github.com/search/repositories?q=sort=stars&order=desc"
 private let clientId: String? = nil
 private let clientSecret: String? = nil
 

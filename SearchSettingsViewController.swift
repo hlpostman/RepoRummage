@@ -13,6 +13,9 @@ class SearchSettingsViewController: UIViewController {
     @IBOutlet weak var numberOfStarsLabel: UILabel!
     
     @IBOutlet weak var numberOfStarsSlider: UISlider!
+    
+    var settings: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
