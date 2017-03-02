@@ -75,6 +75,11 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
                 print(error)
         })
     }
+    
+    @IBAction func onSettingsButton(_ sender: AnyObject) {
+        performSegue(withIdentifier: "searchSettingsSegue", sender: nil)
+    }
+    
 }
 
 // SearchBar methods
