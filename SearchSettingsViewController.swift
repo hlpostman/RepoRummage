@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol SettingsPresentingViewControllerDelegate: class {
+    func didSaveSettings(settings: GithubRepoSearchSettings)
+    func didCancelSettings()
+}
+
 class SearchSettingsViewController: UIViewController {
 
     @IBOutlet weak var numberOfStarsLabel: UILabel!
@@ -42,3 +47,6 @@ class SearchSettingsViewController: UIViewController {
     */
 
 }
+
+weak var delegate: SettingsPresentingViewControllerDelegate?
+
